@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ag.DbData.OleDb</name>
+    </assembly>
+    <members>
+        <member name="T:ag.DbData.OleDb.Extensions.Extensions">
+            <summary>
+            Represents <see cref="N:ag.DbData.OleDb"/> extensions.
+            </summary>
+        </member>
+        <member name="M:ag.DbData.OleDb.Extensions.Extensions.AddAgOleDb(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Appends the registration of <see cref="T:ag.DbData.OleDb.Factories.OleDbDataFactory"/> and <see cref="T:ag.DbData.OleDb.OleDbDataObject"/> services to <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to add the services to.</param>
+            <returns><see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="M:ag.DbData.OleDb.Extensions.Extensions.AddAgOleDb(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection)">
+            <summary>
+            Appends the registration of <see cref="T:ag.DbData.OleDb.Factories.OleDbDataFactory"/> and <see cref="T:ag.DbData.OleDb.OleDbDataObject"/> services to <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> and registers a configuration instance.
+            </summary>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to add the services to.</param>
+            <param name="configurationSection">The <see cref="T:Microsoft.Extensions.Configuration.IConfigurationSection"/> being bound.</param>
+            <returns><see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="M:ag.DbData.OleDb.Extensions.Extensions.AddAgOleDb(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{ag.DbData.OleDb.OleDbDataSettings})">
+            <summary>
+            Appends the registration of <see cref="T:ag.DbData.OleDb.Factories.OleDbDataFactory"/> and <see cref="T:ag.DbData.OleDb.OleDbDataObject"/> services to <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> and configures the options.
+            </summary>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to add the services to.</param>
+            <param name="configureOptions">The action used to configure the options.</param>
+            <returns><see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="T:ag.DbData.OleDb.Factories.IOleDbDbDataFactory">
+            <inheritdoc />
+        </member>
+        <member name="T:ag.DbData.OleDb.Factories.OleDbDataFactory">
+            <summary>
+            Represents OleDbDataFactory object.
+            </summary>
+        </member>
+        <member name="M:ag.DbData.OleDb.Factories.OleDbDataFactory.Create">
+            <summary>
+            Creates object of type <see cref="T:ag.DbData.OleDb.OleDbDataObject"/>.
+            </summary>
+            <returns><see cref="T:ag.DbData.OleDb.OleDbDataObject"/> implementation of <see cref="T:ag.DbData.Abstraction.IDbDataObject"/> interface.</returns>
+        </member>
+        <member name="M:ag.DbData.OleDb.Factories.OleDbDataFactory.Create(System.String)">
+            <summary>
+            Creates object of type <see cref="T:ag.DbData.OleDb.OleDbDataObject"/>.
+            </summary>
+            <param name="connectionString">Database connection string.</param>
+            <returns><see cref="T:ag.DbData.OleDb.OleDbDataObject"/> implementation of <see cref="T:ag.DbData.Abstraction.IDbDataObject"/> interface.</returns>
+        </member>
+        <member name="M:ag.DbData.OleDb.Factories.OleDbDataFactory.#ctor(System.IServiceProvider)">
+            <summary>
+            Creates new OleDbDataFactory object.
+            </summary>
+            <param name="serviceProvider"><see cref="T:System.IServiceProvider"/>.</param>
+        </member>
+        <member name="T:ag.DbData.OleDb.OleDbDataObject">
+            <summary>
+            Represents OleDbDataObject object.
+            </summary>
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.#ctor(Microsoft.Extensions.Logging.ILogger{ag.DbData.Abstraction.IDbDataObject},Microsoft.Extensions.Options.IOptions{ag.DbData.OleDb.OleDbDataSettings},ag.DbData.Abstraction.Services.IDbDataStringProvider)">
+            <summary>
+            Creates new instance of <see cref="T:ag.DbData.OleDb.OleDbDataObject"/>.
+            </summary>
+            <param name="logger"><see cref="T:Microsoft.Extensions.Logging.ILogger"/> object.</param>
+            <param name="options"><see cref="T:ag.DbData.Abstraction.DbDataSettings"/> options.</param>
+            <param name="stringProvider"><see cref="T:ag.DbData.Abstraction.Services.IDbDataStringProvider"/> object.</param>
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.FillDataSet(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.FillDataSet(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.FillDataSet(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.FillDataSet(System.String,System.Collections.Generic.IEnumerable{System.String},System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.FillDataSetInTransaction(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.FillDataSetInTransaction(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.FillDataSetInTransaction(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.FillDataSetInTransaction(System.String,System.Collections.Generic.IEnumerable{System.String},System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.FillDataTable(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.FillDataTable(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.FillDataTableInTransaction(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.FillDataTableInTransaction(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.FillDataTable(System.Data.Common.DbCommand)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.FillDataTable(System.Data.Common.DbCommand,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.FillDataTableInTransaction(System.Data.Common.DbCommand)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.FillDataTableInTransaction(System.Data.Common.DbCommand,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.ExecuteCommand(System.Data.Common.DbCommand)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.ExecuteCommand(System.Data.Common.DbCommand,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.ExecuteCommandInTransaction(System.Data.Common.DbCommand)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.ExecuteCommandInTransaction(System.Data.Common.DbCommand,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.BeginTransaction(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.BeginTransaction">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.ExecuteAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.ExecuteAsync(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.ExecuteAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.ExecuteAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.GetScalarAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.GetScalarAsync(System.String,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.GetScalarAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:ag.DbData.OleDb.OleDbDataObject.GetScalarAsync(System.String,System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:ag.DbData.OleDb.OleDbDataSettings">
+            <summary>
+            Represents OleDbDataSettings object, inherited from <see cref="T:ag.DbData.Abstraction.DbDataSettings"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

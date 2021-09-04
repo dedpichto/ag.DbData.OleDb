@@ -10,8 +10,27 @@
     <PackageProjectUrl>https://github.com/dedpichto/ag.DbData.OleDb</PackageProjectUrl>
     <RepositoryUrl>https://github.com/dedpichto/ag.DbData.OleDb</RepositoryUrl>
     <PackageTags>Database, OleDb, ADO.NET, .NET, Core, Snandard, Framework</PackageTags>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>ag.DbData.OleDb.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>ag.DbData.OleDb.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove=".gitignore" />
+    <None Remove="LICENSE" />
+    <None Remove="README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="readme.txt" Pack="true" PackagePath="." />
+  </ItemGroup>
+  
   <ItemGroup>
     <PackageReference Include="ag.DbData.Abstraction" Version="3.0.0.5" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.6" />
