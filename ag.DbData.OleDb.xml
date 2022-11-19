@@ -53,6 +53,13 @@
             <param name="connectionString">Database connection string.</param>
             <returns><see cref="T:ag.DbData.OleDb.OleDbDataObject"/> implementation of <see cref="T:ag.DbData.Abstraction.IDbDataObject"/> interface.</returns>
         </member>
+        <member name="M:ag.DbData.OleDb.Factories.OleDbDataFactory.Create(System.Int32)">
+            <summary>
+            Creates object of type <see cref="T:ag.DbData.OleDb.OleDbDataObject"/>.
+            </summary>
+            <param name="defaultCommandTimeOut">Replaces default coommand timeout of provider</param>
+            <returns></returns>
+        </member>
         <member name="M:ag.DbData.OleDb.Factories.OleDbDataFactory.#ctor(System.IServiceProvider)">
             <summary>
             Creates new OleDbDataFactory object.

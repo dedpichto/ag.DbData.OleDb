@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>3.0.0.7</Version>
+    <Version>3.0.0.8</Version>
     <Authors>Andrey Gruber</Authors>
     <Company>Andrey Gruber</Company>
     <Description>Simplifies working with  OLE DB data sources in .NET Framework, .NET Core and .NET Standard projects</Description>
@@ -32,7 +32,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="ag.DbData.Abstraction" Version="3.0.0.7" />
+    <PackageReference Include="ag.DbData.Abstraction" Version="3.0.0.8" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
     <PackageReference Include="System.Data.OleDb" Version="7.0.0" />
